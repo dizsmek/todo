@@ -134,7 +134,7 @@ form input:focus { outline: none; }
 }
 
 @media only screen and (max-width: 768px) {
-  .task { width: 100%; }
+  li.task { width: 95%; }
   form { flex-direction: column; }
   .todo-input, .add-task {
   	width: 100%;
