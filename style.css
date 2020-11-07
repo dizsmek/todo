@@ -74,38 +74,35 @@ form input:focus { outline: none; }
 }
 
 .todo-items li {
+	border-radius: 5px;
 	padding: 10px 0;
 	font-size: 1.1em;
 	text-align: center;
 	width: 50%;
-	margin: auto;
+	margin: 10px auto;
 	color: #D8DCFF;
 }
 
 .task {
-	transition: opacity .5s;
+	transition: opacity ease-in .75s;
 	position: relative;
 	cursor: pointer;
 	background-color: #25325a;
 	border: 1px solid #D8DCFF;
 }
 
-.task:hover {
+.task.urgent {
+	background-color: #9E2B25;
+}
+
+.task:hover, .task.completed {
 	filter: invert(.2);
+	text-decoration: line-through;
 }
 
 .task.completed {
-	text-decoration: line-through;
-	filter: invert(.2);
 	opacity: 0;
-}
-
-.task.removed {
-	display: none;
-}
-
-.task.urgent {
-	background-color: #9E2B25;
+	background: green;
 }
 
 .all-done { display: none; }

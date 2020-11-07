@@ -15,9 +15,9 @@ const handleCompleteTask = (e) => {
 	const currentTask = e.currentTarget;
 	currentTask.classList.add('completed');
 	setTimeout(() => {
-		currentTask.classList.add('removed');
+		currentTask.remove();
 		checkIfAllDone();
-	}, 500);
+	}, 750);
 }
 
 const createNewTaskElement = (text) => {
