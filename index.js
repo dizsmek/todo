@@ -11,8 +11,6 @@ const checkIfAllDone = () => {
 	}
 }
 
-checkIfAllDone();
-
 const handleCompleteTask = (e) => {
 	const currentTask = e.currentTarget;
 	currentTask.classList.add('completed');
