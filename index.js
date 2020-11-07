@@ -27,11 +27,16 @@ const createNewTaskElement = (text) => {
 	const task = document.createElement('LI');
 	task.title = text;
 	task.classList.add('task');
-	if (text.indexOf('!') > -1) {
-		task.classList.add('urgent')
-	}
+
+	if (text.indexOf('!') > -1) { task.classList.add('urgent') }
 
 	task.addEventListener('click', handleCompleteTask);
+
+	// if the input field is empty
+	if (!text.length) {
+		task.classList.add('removed');
+		return task;
+	}
 
 	// create span that shows up when task is hovered over
 	const span = document.createElement('SPAN');

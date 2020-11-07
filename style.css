@@ -100,7 +100,7 @@ form input:focus { outline: none; }
 	opacity: 0;
 }
 
-.task.completed.removed {
+.task.removed {
 	display: none;
 }
 
@@ -121,6 +121,10 @@ form input:focus { outline: none; }
 	display: inline;
 }
 
+
+.error {
+	color: red;
+}
 
 
 /* media-queries */
