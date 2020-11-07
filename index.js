@@ -17,7 +17,7 @@ const handleCompleteTask = (e) => {
 	setTimeout(() => {
 		currentTask.remove();
 		checkIfAllDone();
-	}, 750);
+	}, 500);
 }
 
 const createNewTaskElement = (text) => {

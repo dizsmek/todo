@@ -84,7 +84,7 @@ form input:focus { outline: none; }
 }
 
 .task {
-	transition: opacity ease-in .75s;
+	transition: opacity ease-in .5s;
 	position: relative;
 	cursor: pointer;
 	background-color: #25325a;
