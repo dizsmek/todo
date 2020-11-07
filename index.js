@@ -23,6 +23,8 @@ const handleCompleteTask = (e) => {
 }
 
 const createNewTaskElement = (text) => {
+	if (!text.length) { return; }
+
 	// creating list element and setting its attributes
 	const task = document.createElement('LI');
 	task.title = text;
@@ -31,12 +33,6 @@ const createNewTaskElement = (text) => {
 	if (text.indexOf('!') > -1) { task.classList.add('urgent') }
 
 	task.addEventListener('click', handleCompleteTask);
-
-	// if the input field is empty
-	if (!text.length) {
-		task.classList.add('removed');
-		return task;
-	}
 
 	// create span that shows up when task is hovered over
 	const span = document.createElement('SPAN');
@@ -55,7 +51,10 @@ const createNewTaskElement = (text) => {
 
 const handleAddTask = () => {
 	const newTask = createNewTaskElement(input.value);
-	todoItemsBox.appendChild(newTask);
+
+	if (newTask) {
+		todoItemsBox.appendChild(newTask);
+	}
 	input.value = '';
 }
 
