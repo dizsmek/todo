@@ -3,7 +3,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Arial';
-	background-color: #324376;
+	background-color: #eee;
 	
 }
 
@@ -18,10 +18,7 @@ ul {
 form {
 	display: flex;
 	justify-content: center;
-	position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 1;
 }
 
 form input {
@@ -36,22 +33,16 @@ form input {
 form input:focus { outline: none; }
 
 .todo-input {
-	background-color: #ADB6FF;
+	background-color: #617fde;
 	text-align: center;
 	color: #324376;
 	width: 80%;
 	padding: 10px 10px 10px 20%;
 }
 
-::placeholder { color: rgba(50, 67, 118, .3); }
+.todo-input:focus { background: #617fdea0; }
 
-.todo-input:hover {
-	background-color: #C2C9FF;
-}
-
-.todo-input:focus {
-	background-color: #D8DCFF;;
-}
+::placeholder { color: rgba(43, 71, 158, .5); }
 
 .add-task {
 	cursor: pointer;
@@ -70,42 +61,38 @@ form input:focus { outline: none; }
 
 
 .todo-items {
-	margin-top: 100px;
+	margin-top: 30px;
 }
 
 .todo-items li {
 	border-radius: 5px;
-	padding: 10px 0;
 	font-size: 1.1em;
-	text-align: center;
-	width: 50%;
+	width: 500px;
 	margin: 10px auto;
-	color: #D8DCFF;
+	color: #333;
 }
 
 .task {
-	transition: opacity ease-in .5s;
 	position: relative;
 	cursor: pointer;
-	background-color: #25325a;
+	background-color: #f6af32;
 	border: 1px solid #D8DCFF;
+	padding: 10px 40px;
 }
 
 .task.urgent {
-	background-color: #9E2B25;
+	background-color: #d44b44;
 }
 
-.task:hover, .task.completed {
+.task:hover  {
 	filter: invert(.2);
 	text-decoration: line-through;
 }
 
-.task.completed {
-	opacity: 0;
-	background: green;
+.all-done {
+	display: none;
+	text-align: center;
 }
-
-.all-done { display: none; }
 .all-done.show { display: block; }
 
 .task span {
@@ -125,19 +112,5 @@ form input:focus { outline: none; }
 
 .error {
 	color: red;
-}
-
-
-/* media-queries */
-@media only screen and (max-width: 1024px) {
-  .task { width: 75%; }
-}
-
-@media only screen and (max-width: 768px) {
-  li.task { width: 95%; }
-  form { flex-direction: column; }
-  .todo-input, .add-task {
-  	width: 100%;
-  	padding-left: 0;
-  }
+	text-align: center;
 }
